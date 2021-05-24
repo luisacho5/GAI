@@ -1,0 +1,44 @@
+<project name="JadeProject" default="run" basedir=".">
+  <property name="src" location="src"/>
+  <property name="build" location="build"/>
+
+  <target name="init">
+    <mkdir dir="${build}"/>
+  </target>
+
+  <target name="compile" depends="init" description="compile the source " >
+    <javac srcdir="${src}" destdir="${build}">
+      <classpath location="jade/lib/jade.jar" />
+    </javac>
+  </target>
+
+  <target name="clean" description="clean up" >
+    <delete dir="${build}"/>
+    <delete dir="${dist}"/>
+  </target>
+
+  <target name="run2" description="create agents" >
+    <java fork="true" classpath="jade/lib/jade.jar;build" classname="jade.Boot">
+      <arg value="-gui" />
+      <arg value="Vitor:jadeproject.MeetingAgent();Luis:jadeproject.MeetingAgent();" />
+    </java>
+  </target>
+  <target name="run" description="create agents" >
+    <java fork="true" classpath="jade/lib/jade.jar;build" classname="jade.Boot">
+      <arg value="-gui" />
+      <arg value="Vitor:jadeproject.MeetingAgent();Luis:jadeproject.MeetingAgent();Roger:jadeproject.MeetingAgent();Francisco:jadeproject.MeetingAgent();" />
+    </java>
+  </target>
+  <target name="run6" description="create agents" >
+    <java fork="true" classpath="jade/lib/jade.jar;build" classname="jade.Boot">
+      <arg value="-gui" />
+      <arg value="Vitor:jadeproject.MeetingAgent();Luis:jadeproject.MeetingAgent();Roger:jadeproject.MeetingAgent();Francisco:jadeproject.MeetingAgent();Vasco:jadeproject.MeetingAgent();Mattia:jadeproject.MeetingAgent();" />
+    </java>
+  </target>
+  <target name="run8" description="create agents" >
+    <java fork="true" classpath="jade/lib/jade.jar;build" classname="jade.Boot">
+      <arg value="-gui" />
+      <arg value="Vitor:jadeproject.MeetingAgent();Luis:jadeproject.MeetingAgent();Roger:jadeproject.MeetingAgent();Francisco:jadeproject.MeetingAgent();Vasco:jadeproject.MeetingAgent();Mattia:jadeproject.MeetingAgent();Gil:jadeproject.MeetingAgent();Peppe:jadeproject.MeetingAgent();" />
+    </java>
+  </target>
+</project>
