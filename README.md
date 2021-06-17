@@ -1,2 +1,3 @@
 # GAI
-Project Laboratory1 and laboratory2 of Group Artificial intelligence university AGH
+My project of Artificial Intelligence of Multi Agent service using java and jade.
+Course Group artificial Intelligence of AGH university
